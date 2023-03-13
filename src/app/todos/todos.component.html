@@ -8,13 +8,13 @@
 		</tr>
 	</thead>
 	<tbody>
-		<tr *ngFor="let task of tasks; let i = index">
+		<tr *ngFor="let task of state.allTodos; let i = index">
 			<th scope="row">{{ index }}</th>
 			<td>{{ task.title }}</td>
 			<td>{{ task.status ? 'Completed' :'In progress' }}</td>
 			<td>
-				<button type="submit" (click)="deleteTask(i)" class="btn btn-danger">Delete</button>
-				<button type="submit" (click)="completeTask(i)" class="btn btn-success ms-1">Finished</button>
+				<button type="submit" (click)="state.deleteTask(i)" class="btn btn-danger">Delete</button>
+				<button type="submit" (click)="state.completeTask(i)" class="btn btn-success ms-1">Finished</button>
 			</td>
 		</tr>
 	</tbody>

@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { stat } from 'fs';
 import { TodosServiceService } from '../todos-service.service';
 import { Todo } from '../todos.model';
 
@@ -8,18 +7,18 @@ import { Todo } from '../todos.model';
   templateUrl: './todos.component.html',
   styleUrls: ['./todos.component.scss']
 })
-export class TodosComponent implements OnInit{
-  constructor(private state: TodosServiceService) { }
+export class TodosComponent implements OnInit {
+  constructor(public state: TodosServiceService) { }
+
+  tasks: Todo[] = [];
+
+  getTasks(): void {
+    this.state.getTasks()
+      .subscribe(allTasks => this.tasks = allTasks);
+  }
+
   ngOnInit(): void {
-    this.tasks = this.state.tasks.value;
-  }
-  tasks: Todo[];
-
-  deleteTask(index:number){
-    this.state.tasks.value.splice(index);
+    this.state.getTasks();
   }
 
-  completeTask(index:number){
-    this.state.tasks.value[index].status = true;
-  }
 }

@@ -8,8 +8,10 @@ import { Todo } from './todos.model';
 export class TodosServiceService {
   allTodos: Todo[] = [{ no: 1, status: false, title: 'First Task' }];
   addTask(taskName: string) {
+    console.log(taskName);
+    
     this.allTodos.push(
-      { no: 2, status: false, title: taskName }
+      { no: this.allTodos.length+1, status: false, title: taskName }
     )
   }
   getTasks(): Observable<Todo[]> {
@@ -18,7 +20,7 @@ export class TodosServiceService {
   }
 
   deleteTask(index: number) {
-    this.allTodos.splice(index);
+    this.allTodos.splice(index,1);
   }
 
   completeTask(index: number) {

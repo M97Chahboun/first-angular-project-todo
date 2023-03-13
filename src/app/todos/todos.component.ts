@@ -9,16 +9,7 @@ import { Todo } from '../todos.model';
 })
 export class TodosComponent implements OnInit {
   constructor(public state: TodosServiceService) { }
-
-  tasks: Todo[] = [];
-
-  getTasks(): void {
-    this.state.getTasks()
-      .subscribe(allTasks => this.tasks = allTasks);
-  }
-
   ngOnInit(): void {
-    this.state.getTasks();
   }
 
 }

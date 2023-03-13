@@ -23,6 +23,7 @@ import { MdbValidationModule } from 'mdb-angular-ui-kit/validation';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { TodosComponent } from './todos/todos.component';
 import { NewTodoComponent } from './new-todo/new-todo.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -48,6 +49,7 @@ import { NewTodoComponent } from './new-todo/new-todo.component';
     MdbTabsModule,
     MdbTooltipModule,
     MdbValidationModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -9,8 +9,8 @@
 	</thead>
 	<tbody>
 		<tr *ngFor="let task of state.allTodos; let i = index">
-			<th scope="row">{{ index }}</th>
-			<td>{{ task.title }}</td>
+			<th scope="row">{{ i+1 }}</th>
+			<td>{{ task.title.length >= 25 ? task.title.substring(0,25) : task.title }}</td>
 			<td>{{ task.status ? 'Completed' :'In progress' }}</td>
 			<td>
 				<button type="submit" (click)="state.deleteTask(i)" class="btn btn-danger">Delete</button>

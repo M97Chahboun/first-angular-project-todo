@@ -17,6 +17,9 @@ export class NewTodoComponent implements OnInit {
   }
 
   addTask(){
+    if(this.taskName.length == 0){
+      return;
+    }
     this.state.addTask(this.taskName);
     this.taskName = '';
   }

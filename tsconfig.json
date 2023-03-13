@@ -11,14 +11,11 @@
     "moduleResolution": "node",
     "importHelpers": true,
     "target": "ES2022",
-    "module": "ES2022",
-    "useDefineForClassFields": false,
+    "module": "es2020",
     "lib": [
-      "ES2022",
+      "es2018",
       "dom"
-    ]
-  },
-  "angularCompilerOptions": {
-    "enableI18nLegacyMessageIdFormat": false
+    ],
+    "useDefineForClassFields": false
   }
 }

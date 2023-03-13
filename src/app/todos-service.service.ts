@@ -8,8 +8,6 @@ import { Todo } from './todos.model';
 export class TodosServiceService {
   allTodos: Todo[] = [{ no: 1, status: false, title: 'First Task' }];
   addTask(taskName: string) {
-    console.log(taskName);
-    
     this.allTodos.push(
       { no: this.allTodos.length+1, status: false, title: taskName }
     )

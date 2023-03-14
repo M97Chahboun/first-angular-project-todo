@@ -14,7 +14,7 @@
 			<td>{{ task.status ? 'Completed' :'In progress' }}</td>
 			<td>
 				<button type="submit" (click)="state.deleteTask(i)" class="btn btn-danger">Delete</button>
-				<button type="submit" (click)="state.completeTask(i)" class="btn btn-success ms-1">Finished</button>
+				<button type="submit" (click)="state.updateTask(i)" class="btn btn-success ms-1">{{ task.status ? 'Unfinished' : 'Finished' }}</button>
 			</td>
 		</tr>
 	</tbody>

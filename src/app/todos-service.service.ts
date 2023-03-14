@@ -21,7 +21,7 @@ export class TodosServiceService {
     this.allTodos.splice(index,1);
   }
 
-  completeTask(index: number) {
-    this.allTodos[index].status = true;
+  updateTask(index: number) {
+    this.allTodos[index].status = !this.allTodos[index].status;
   }
 }
